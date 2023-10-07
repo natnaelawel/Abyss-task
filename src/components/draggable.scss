@@ -1,0 +1,23 @@
+.wrapper {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.5 ease-in-out;
+  &.dragging {
+    cursor: grabbing;
+    background-color: #afbec7;
+  }
+}
+.draggable-component {
+  position: absolute;
+  transition: background-color 0.2s;
+  cursor: move;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

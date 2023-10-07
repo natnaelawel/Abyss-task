@@ -1,0 +1,352 @@
+.flex {
+  display: flex;
+}
+.items-center {
+  align-items: center;
+}
+.justify-center {
+  justify-content: center;
+}
+.justify-between {
+  justify-content: space-between;
+}
+.justify-around {
+  justify-content: space-around;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.flex-column {
+  flex-direction: column;
+}
+.flex-row {
+  flex-direction: row;
+}
+.flex-1 {
+  flex: 1;
+}
+.w-screen {
+  width: 100vw;
+}
+.h-screen {
+  height: 100vh;
+}
+.w-full {
+  width: 100%;
+}
+
+.header {
+  padding: 50px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f5f5f5;
+
+  .header-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    .header-brand-title {
+      font-size: xx-large;
+      font-weight: 600;
+    }
+    .header-brand-title-badge {
+      background-color: rgb(218, 218, 34);
+      color: white;
+      border-radius: 50%;
+      padding: 5;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    .action-list-view-button {
+      background-color: blue;
+      padding: 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      color: white;
+      outline: none;
+      appearance: none;
+      border: none;
+      font-weight: 600;
+      font-size: 15px;
+      text-transform: uppercase;
+    }
+
+    .action-share-button {
+      background-color: white;
+      padding: 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      color: rgb(160, 160, 160);
+      outline: none;
+      appearance: none;
+      border: none;
+      font-weight: 600;
+      text-transform: uppercase;
+
+      svg {
+        font-size: 24px;
+      }
+    }
+
+    .action-zoom-button {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      .action-zoom-in-button,
+      .action-zoom-out-button {
+        background-color: white;
+        padding: 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        color: rgb(160, 160, 160);
+        outline: none;
+        appearance: none;
+        border: none;
+        font-weight: 600;
+        text-transform: uppercase;
+
+        svg {
+          font-size: 24px;
+        }
+      }
+
+      .action-zoom-dropdown {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        transition: height 0.5s ease-in-out;
+        .zoom-button {
+          background-color: white;
+          padding: 15px;
+          border-radius: 5px;
+          cursor: pointer;
+          color: rgb(160, 160, 160);
+          outline: none;
+          appearance: none;
+          border: none;
+          font-weight: 600;
+          text-transform: uppercase;
+
+          svg {
+            font-size: 24px;
+          }
+        }
+
+        .dropdown-content {
+          position: absolute;
+          top: 110%;
+          left: calc(50% - 50px);
+          background-color: white;
+          border-radius: 5px;
+          padding: 10px;
+          box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.25);
+          z-index: 1;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          width: 100px;
+          .dropdown-item {
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            color: rgb(160, 160, 160);
+            outline: none;
+            appearance: none;
+            border: none;
+            font-weight: 600;
+            &:hover {
+              background-color: rgb(160, 160, 160);
+              color: white;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.absolute {
+  position: absolute;
+}
+
+.relative {
+  position: relative;
+}
+
+.tree ul {
+  padding-top: 20px;
+  position: relative;
+  padding-left: 0px;
+  display: flex;
+  justify-content: center;
+  z-index: 10;
+}
+.tree li {
+  width: auto;
+  float: left;
+  list-style-type: none;
+  position: relative;
+  padding: 20px 5px 0 5px;
+  margin-right: 150px;
+}
+.tree li::before,
+.tree li::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 50%;
+  border-top: 2px solid #ccc;
+  width: calc(50% + 200px);
+  height: 18px;
+}
+.tree li::after {
+  right: auto;
+  left: 50%;
+  border-left: 2px solid #ccc;
+}
+.tree li:only-child::after,
+.tree li:only-child::before {
+  display: none;
+}
+.tree li:only-child {
+  padding-top: 0;
+}
+.tree li:first-child::before,
+.tree li:last-child::after {
+  border: 0 none;
+}
+.tree li:last-child::before {
+  border-right: 2px solid #ccc;
+  border-radius: 0 5px 0 0;
+  -webkit-border-radius: 0 5px 0 0;
+  -moz-border-radius: 0 5px 0 0;
+}
+.tree li:first-child::after {
+  border-radius: 5px 0 0 0;
+  -webkit-border-radius: 5px 0 0 0;
+  -moz-border-radius: 5px 0 0 0;
+}
+.tree ul ul::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  border-left: 2px solid #ccc;
+  width: 0;
+  height: 20px;
+}
+
+.node-container {
+  width: min-content;
+  position: relative;
+}
+
+.node-box {
+  width: min-content;
+  position: relative;
+  -webkit-user-drag: auto;
+  :-moz-drag-over {
+    border: dashed 3px #ccc;
+  }
+}
+.node-box.root {
+  border: dashed 3px #ccc;
+}
+
+.resizer {
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  opacity: 0;
+  resize: both;
+}
+
+.node {
+  width: fit-content;
+}
+
+.node-input {
+  width: fit-content;
+  min-height: 50px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+  padding: 0 10px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+
+.node-data {
+  padding: 10px 30px;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 16px;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.node-action {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) translateX(100%);
+  right: 0px;
+}
+
+.node-action-button {
+  height: 30px;
+  width: 30px;
+  margin: 0 5px;
+  border-radius: 50%;
+  background-color: #ccc;
+  color: black;
+  position: relative;
+  border: none;
+  box-shadow: #333;
+  cursor: pointer;
+  outline: none;
+  appearance: none;
+}
+
+.node-action-button:hover {
+  background-color: #333;
+  color: white;
+}
+
+.node-action-button svg {
+  font-size: x-large;
+  font-weight: bolder;
+  // fill: white;
+}
+.node-action-button svg path {
+  stroke: #fff;
+  fill: #fff;
+}
+
+.node-action-button.remove {
+  background-color: red;
+}
+
+.node-action-button.remove:hover {
+  background-color: rgb(186, 98, 98);
+}
